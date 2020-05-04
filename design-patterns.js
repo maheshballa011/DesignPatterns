@@ -10,7 +10,7 @@ function clearLogs(){
 }
 
 let factory = new PersonFactory();
-let decorator = new DecoratedCalculator(new CleverCalculator());
+let decorator = new calculatorWapper(new CleverCalculator());
 let cumulativeSum = new CumulativeSum();
 let command = new Command(new SpecialMath(3));
 
@@ -26,7 +26,7 @@ function calculate(term1,term2,operation){
 }
 
 function add(){
-  console.log(cumulativeSum.add(4).add(5).add(6).add(7).sum);
+  console.log(cumulativeSum.add(10).add(11).add(12).add(13).sum);
 }
 
 function execute(operation){
@@ -39,12 +39,12 @@ function subscriber(data){
   console.log(data);
 }
 function addUser(){
-  userSubscription.addUser(document.getElementById('name').value);
+  userSubscription.addUser(document.getElementById('userName').value);
 
 }
 
 function removeUser(){
-  userSubscription.removeUser(document.getElementById('name').value);
+  userSubscription.removeUser(document.getElementById('userName').value);
 }
 
 function subscribe(){

@@ -24,6 +24,9 @@ class NewCalculator {
     }
 }
 
+/**
+ * Adapter pattern
+ */
 class UltimateCalculator{
     constructor(){
         this.oldCalculator = new OldCalculator();
@@ -58,7 +61,10 @@ class CleverCalculator {
     };
   }
 
-  class DecoratedCalculator{
+  /**
+   * Decorator Pattern
+   */
+  class calculatorWapper{
     constructor(calculator){
         this.calculator = calculator;
       

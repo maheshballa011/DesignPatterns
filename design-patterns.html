@@ -58,13 +58,13 @@ body {font-family: Arial;}
 <body>
     <h1 style="text-align: center;">Design Patterns</h1>
 <div class="tab">
-  <button class="tablinks" onclick="openTab(event, 'creational')">Creational Pattern</button>
+  <button class="tablinks active" onclick="openTab(event, 'creational')">Creational Pattern</button>
   <button class="tablinks" onclick="openTab(event, 'structural')">structural Pattern</button>
   <button class="tablinks" onclick="openTab(event, 'behaviour')">Behaviour Pattern</button>
     <button style="float: right;" onclick="clearLogs()">Clear Logs</button>
 </div>
 
-<div id="creational" class="tabcontent">
+<div id="creational" class="tabcontent" style="display: block;">
     <div>
         <button onclick="createInstance('person')">Create Person</button>
       </div>

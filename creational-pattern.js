@@ -1,39 +1,46 @@
 class Person {
 
-    constructor(name='unnamed person')  {
+    constructor(name = 'unnamed person') {
         this.name = name;
     }
 }
 
 class Shopper extends Person {
 
-    constructor(name, money=0) {
+    constructor(name, money = 0) {
         super(name);
         this.money = money;
         this.employed = false;
     }
 }
 
+/**
+ * Singleton design pattern to create single instance
+ */
 class Employee extends Shopper {
 
-    constructor(name, money=0, employer='') {
-        if(Employee.instance){
-            console.log("Instance already created");
-            return this;
+    constructor(name, money = 0, employer = '') {
+        if (!Employee.instance) {
+            super(name, money);
+            this.employerName = employer;
+            this.employed = true;
+            Employee.instance = this;
+        } else {
+            console.log("Employee Instance already created");
         }
-        super(name, money);
-        this.employerName = employer;
-        this.employed = true;
-        Employee.instance = this;
-        return this;
+
+        return Employee.instance;
     }
 }
 
+/**
+ * Factory pattern to create different type of instances
+ */
 class PersonFactory {
 
-    constructor(type){
+    constructor(type) {
 
-        this.createPerson = function(type) {
+        this.createPerson = function (type) {
 
             switch (type) {
                 case 'person':
@@ -43,7 +50,7 @@ class PersonFactory {
                 case 'shopper':
                     return new Shopper('Alex Banks', 1000);
                 default:
-                    throw('Object type is unknown');
+                    throw ('Object type is unknown');
             }
 
         }
