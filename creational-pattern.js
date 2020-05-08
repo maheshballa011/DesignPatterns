@@ -40,15 +40,15 @@ class PersonFactory {
 
     constructor(type) {
 
-        this.createPerson = function (type) {
+        this.createPerson = function (type, name, amount, company) {
 
             switch (type) {
                 case 'person':
-                    return new Person('Mahesh');
+                    return new Person(name);
                 case 'employee':
-                    return new Employee('Eve Parcello', 1000, 'Refinitiv');
+                    return new Employee(name, amount, company);
                 case 'shopper':
-                    return new Shopper('Alex Banks', 1000);
+                    return new Shopper(name, amount);
                 default:
                     throw ('Object type is unknown');
             }

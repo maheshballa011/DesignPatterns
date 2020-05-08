@@ -17,8 +17,8 @@ let command = new Command(new SpecialMath(3));
 let userSubscription = new UserSubscription();
 userSubscription.subscribe(subscriber);
 
-function createInstance(type){
-  console.log (factory.createPerson(type));
+function createInstance(type, name, amount, company){
+  console.log (factory.createPerson(type, name, amount, company));
 }
 
 function calculate(term1,term2,operation){
